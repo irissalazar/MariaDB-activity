@@ -63,6 +63,17 @@ JOIN courses
     ON enrollments.course_id = courses.course_id
 WHERE courses.course_name = 'BSIT';
 
+-- Challenge Task 2: Display all courses taken by a particular student
+SELECT
+    students.name,
+    courses.course_name
+FROM enrollments
+JOIN students
+    ON enrollments.student_id = students.id
+JOIN courses
+    ON enrollments.course_id = courses.course_id
+WHERE students.name = 'Iris Salazar';
+
 -- Sort students alphabetically
 SELECT
     students.name,
